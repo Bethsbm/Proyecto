@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Technology;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Win.TechnologyIndustries
 {
     public partial class IngresoInventarioForm : Form
     {
+        ProductosBL _productos;
         public IngresoInventarioForm()
         {
             InitializeComponent();
+
+            _productos = new ProductosBL();
+            listadeProductosBindingSource.DataSource = _productos.ObtenerProducto();
         }
     }
 }

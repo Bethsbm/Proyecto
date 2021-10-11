@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.Technology;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Win.TechnologyIndustries
 {
     public partial class LoginForm : Form
     {
+        SeguridadBL _seguridad;
+
         public LoginForm()
         {
             InitializeComponent();
+
+            _seguridad = new SeguridadBL();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -47,11 +52,9 @@ namespace Win.TechnologyIndustries
             string usuario = textBoxUsuario.Text;
             string password = textBoxPassword.Text;
 
-            if (usuario == "JulioRojas" && password == "20192002031")
-            {
-                this.Close();
-            }
-            else if (usuario == "MaritzaSosa" && password == "20166130012")
+            var resultado = _seguridad.Autorizar(usuario, password);
+
+            if (resultado == true)
             {
                 this.Close();
             }
