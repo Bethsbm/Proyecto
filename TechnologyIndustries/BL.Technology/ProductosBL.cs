@@ -72,7 +72,7 @@ namespace BL.Technology
 
             var Producto6 = new Producto();
 
-            Producto6.ID = 3;
+            Producto6.ID = 6;
             Producto6.Descripción = "Huawei P30 Lite";
             Producto6.Precio = 9500;
             Producto6.Stock = 12;
@@ -86,6 +86,74 @@ namespace BL.Technology
         {
             return ListadeProductos;
         }
+
+        public Resultado GuardarProducto(Producto producto)
+        {
+            var resultado = Validar(producto);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            if (producto.ID == 0)
+            {
+                producto.ID = ListadeProductos.Max(item => item.ID) + 1;
+            }
+
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarProducto()
+        {
+            var nuevoProducto = new Producto();
+            ListadeProductos.Add(nuevoProducto);
+        }
+
+        public bool EliminarProducto(int id)
+        {
+            foreach (var producto in ListadeProductos)
+            {
+                if (producto.ID == id)
+                {
+                    ListadeProductos.Remove(producto);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Resultado Validar(Producto producto)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty(producto.Ubicación) == true)
+            {
+                resultado.Mensaje = "Ingrese la ubicación del producto";
+                resultado.Exitoso = false;
+            }
+
+            if (string.IsNullOrEmpty(producto.Descripción) == true)
+            {
+                resultado.Mensaje = "Ingrese una descripción";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Stock < 0)
+            {
+                resultado.Mensaje = "El stock debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.Precio < 0)
+            {
+                resultado.Mensaje = "El precio debe ser mayor que cero";
+                resultado.Exitoso = false;
+            }
+
+            return resultado;
+        }
     }
 
     public class Producto
@@ -97,5 +165,11 @@ namespace BL.Technology
         public string Ubicación { get; set; }
         public bool Activo { get; set; }
 
+    }
+
+    public class Resultado
+    {
+        public bool Exitoso { get; set; }
+        public string Mensaje { get; set; }
     }
 }
