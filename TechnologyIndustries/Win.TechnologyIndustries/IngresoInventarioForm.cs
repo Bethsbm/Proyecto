@@ -43,6 +43,7 @@ namespace Win.TechnologyIndustries
             {
                 listadeProductosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("¡Producto guardado exitosamente!");
             }
             else
             {
@@ -90,6 +91,7 @@ namespace Win.TechnologyIndustries
             if (resultado == true)
             {
                 listadeProductosBindingSource.ResetBindings(false);
+                MessageBox.Show("¡Producto eliminado exitosamente!");
             }
             else
             {
