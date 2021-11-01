@@ -119,14 +119,14 @@ namespace BL.Technology
     {
         public int ID { get; set; }
         public string Descripción { get; set; }
-        public int TipoId { get; set; } //Nuevo
-        public Tipo Tipo { get; set; }  //Nuevo
-        public int ClasificacionId { get; set; } //Nuevo
-        public Clasificacion Clasificacion { get; set; }  //Nuevo
+        public int TipoId { get; set; } 
+        public Tipo Tipo { get; set; }  
+        public int ClasificacionId { get; set; }
+        public Clasificacion Clasificacion { get; set; }  
         public double Precio { get; set; }
         public int Stock { get; set; }
-        public int UbicacionId { get; set; } //Nuevo
-        public Ubicacion Ubicacion { get; set; } //Nuevo
+        public int UbicacionId { get; set; }
+        public Ubicacion Ubicacion { get; set; }
         public bool Activo { get; set; }
         public byte[] Foto { get; set; }
 

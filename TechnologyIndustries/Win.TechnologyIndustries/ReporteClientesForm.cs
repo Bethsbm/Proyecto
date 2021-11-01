@@ -39,7 +39,7 @@ namespace Win.TechnologyIndustries
             {
                 listaClientesBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
-                MessageBox.Show("¡Producto guardado exitosamente!");
+                MessageBox.Show("¡Datos del cliente guardados exitosamente!");
             }
             else
             {
