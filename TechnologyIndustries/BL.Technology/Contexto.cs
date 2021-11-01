@@ -18,8 +18,13 @@ namespace BL.Technology
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());
         }
 
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Tipo> Tipos { get; set; }
+        public DbSet<Clasificacion> Clasificaciones { get; set; }
+        public DbSet<Ubicacion> Ubicaciones { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

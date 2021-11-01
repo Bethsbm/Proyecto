@@ -63,6 +63,7 @@ namespace Win.TechnologyIndustries
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
         }
+
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("¡No hay problema! Solo intenta recordarla.");

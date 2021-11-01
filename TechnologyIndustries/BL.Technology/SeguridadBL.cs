@@ -23,7 +23,5 @@ namespace BL.Technology
                 return false;
             }
         }
-      
-
     }
 }

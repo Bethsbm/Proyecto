@@ -10,14 +10,13 @@ namespace BL.Technology
 {
     public class ProductosBL
     {
-        Contexto _contexto;
+       Contexto _contexto;
        public BindingList<Producto> ListadeProductos { get; set; }
 
         public ProductosBL()
         {
             _contexto = new Contexto();
             ListadeProductos = new BindingList<Producto>();
-
         }
 
         public BindingList<Producto> ObtenerProducto()
@@ -67,12 +66,6 @@ namespace BL.Technology
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
-            if (string.IsNullOrEmpty(producto.Ubicación) == true)
-            {
-                resultado.Mensaje = "Ingrese la ubicación del producto";
-                resultado.Exitoso = false;
-            }
-
             if (string.IsNullOrEmpty(producto.Descripción) == true)
             {
                 resultado.Mensaje = "Ingrese una descripción";
@@ -91,7 +84,34 @@ namespace BL.Technology
                 resultado.Exitoso = false;
             }
 
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione el tipo de producto";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.ClasificacionId == 0)
+            {
+                resultado.Mensaje = "Seleccione la clasificación del producto";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.UbicacionId == 0)
+            {
+                resultado.Mensaje = "Seleccione la ubicación del producto";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
+        }
+
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
         }
     }
 
@@ -99,10 +119,16 @@ namespace BL.Technology
     {
         public int ID { get; set; }
         public string Descripción { get; set; }
+        public int TipoId { get; set; } //Nuevo
+        public Tipo Tipo { get; set; }  //Nuevo
+        public int ClasificacionId { get; set; } //Nuevo
+        public Clasificacion Clasificacion { get; set; }  //Nuevo
         public double Precio { get; set; }
         public int Stock { get; set; }
-        public string Ubicación { get; set; }
+        public int UbicacionId { get; set; } //Nuevo
+        public Ubicacion Ubicacion { get; set; } //Nuevo
         public bool Activo { get; set; }
+        public byte[] Foto { get; set; }
 
     }
 

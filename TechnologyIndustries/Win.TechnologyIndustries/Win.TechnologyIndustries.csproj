@@ -151,9 +151,13 @@
       <DependentUpon>VentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.Technology.ClasificacionesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Technology.ClientesBL.datasource" />
     <None Include="Properties\DataSources\BL.Technology.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Technology.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Technology.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.Technology.TiposBL.datasource" />
+    <None Include="Properties\DataSources\BL.Technology.UbicacionesBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
