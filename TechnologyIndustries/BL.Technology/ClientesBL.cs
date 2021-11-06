@@ -66,6 +66,14 @@ namespace BL.Technology
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if (cliente == null)
+            {
+                resultado.Mensaje = "¡Por favor! Agregue un cliente válido";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if (string.IsNullOrEmpty(cliente.Nombre) == true)
             {
                 resultado.Mensaje = "Ingrese el nombre del cliente";

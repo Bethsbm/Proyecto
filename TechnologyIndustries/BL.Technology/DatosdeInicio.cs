@@ -11,6 +11,17 @@ namespace BL.Technology
     {
         protected override void Seed(Contexto contexto)
         {
+            //USUARIOS
+            var usuarioJR = new Usuario();
+            usuarioJR.Nombre = "JulioRojas";
+            usuarioJR.Password = "20192002031";
+            contexto.Usuarios.Add(usuarioJR);
+
+            var usuarioMS = new Usuario();
+            usuarioMS.Nombre = "MaritzaSosa";
+            usuarioMS.Password = "20166130012";
+            contexto.Usuarios.Add(usuarioMS);
+
             //TIPOS
             var tipo1 = new Tipo();
             tipo1.Descripcion = "Telefonos";

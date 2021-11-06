@@ -66,6 +66,14 @@ namespace BL.Technology
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+            if (producto == null)
+            {
+                resultado.Mensaje = "¡Por favor! Agregue un producto válido";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if (string.IsNullOrEmpty(producto.Descripción) == true)
             {
                 resultado.Mensaje = "Ingrese una descripción";

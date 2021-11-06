@@ -79,5 +79,12 @@ namespace Win.TechnologyIndustries
         {
 
         }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var FacturaForm = new FacturaForm();
+            FacturaForm.MdiParent = this;
+            FacturaForm.Show();
+        }
     }
 }

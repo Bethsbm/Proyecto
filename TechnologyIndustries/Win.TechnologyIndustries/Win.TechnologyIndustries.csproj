@@ -66,6 +66,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacturaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaForm.Designer.cs">
+      <DependentUpon>FacturaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="VentasForm.Designer.cs">
       <DependentUpon>VentasForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FacturaForm.resx">
+      <DependentUpon>FacturaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Technology.ClasificacionesBL.datasource" />
     <None Include="Properties\DataSources\BL.Technology.ClientesBL.datasource" />
+    <None Include="Properties\DataSources\BL.Technology.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.Technology.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Technology.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Technology.SeguridadBL.datasource" />
@@ -182,6 +192,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signo menos.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menos2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Más %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menos %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whatsapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whatsapp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whatsapp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\124034.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

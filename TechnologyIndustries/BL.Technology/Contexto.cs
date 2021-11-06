@@ -26,5 +26,7 @@ namespace BL.Technology
         public DbSet<Clasificacion> Clasificaciones { get; set; }
         public DbSet<Ubicacion> Ubicaciones { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Factura> Facturas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

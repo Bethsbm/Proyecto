@@ -8,20 +8,33 @@ namespace BL.Technology
 {
     public class SeguridadBL
     {
+        Contexto _contexto;
+
+        public SeguridadBL()
+        {
+            _contexto = new Contexto();
+        }
+
         public bool Autorizar(string usuario, string password)
         {
-            if (usuario == "JulioRojas" && password == "20192002031")
+            var usuarios = _contexto.Usuarios.ToList();
+
+            foreach (var usuarioDB in usuarios)
             {
-                return true;
+                if (usuario == usuarioDB.Nombre && password == usuarioDB.Password)
+                {
+                    return true;
+                }
             }
-            else if (usuario == "MaritzaSosa" && password == "20166130012")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
+    }
+
+    public class Usuario
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Password { get; set; }
     }
 }

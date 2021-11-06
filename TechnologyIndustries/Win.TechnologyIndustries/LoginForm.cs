@@ -52,6 +52,10 @@ namespace Win.TechnologyIndustries
             string usuario = textBoxUsuario.Text;
             string password = textBoxPassword.Text;
 
+            buttonAceptar.Enabled = false;
+            buttonAceptar.Text = "Verificando...";
+            Application.DoEvents();
+
             var resultado = _seguridad.Autorizar(usuario, password);
 
             if (resultado == true)
