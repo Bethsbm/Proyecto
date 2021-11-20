@@ -160,5 +160,23 @@ namespace Win.TechnologyIndustries
         {
             fotoPictureBox.Image = null;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            string buscar = textBox1.Text;
+
+        
+            if (buscar == "")
+            {
+                listadeProductosBindingSource.DataSource = _productos.ObtenerProducto();
+            }
+            else
+            {
+                listadeProductosBindingSource.DataSource = _productos.ObtenerProducto(buscar);
+            }
+
+            listadeProductosBindingSource.ResetBindings(false);
+        }
     }
 }

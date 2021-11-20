@@ -26,6 +26,11 @@ namespace Win.TechnologyIndustries
         {
             var loginForm = new LoginForm();
             loginForm.ShowDialog();
+
+            toolStripStatusLabel9.Text = Utilidades.nombreUsuario;
+            toolStripStatusLabel4.Text = DateTime.Now.ToLongDateString();
+            toolStripStatusLabel8.Text = DateTime.Now.ToLongTimeString();
+
         }
 
         private void ingresoDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)

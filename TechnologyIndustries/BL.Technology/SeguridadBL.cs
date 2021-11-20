@@ -15,7 +15,7 @@ namespace BL.Technology
             _contexto = new Contexto();
         }
 
-        public bool Autorizar(string usuario, string password)
+        public Usuario Autorizar(string usuario, string password)
         {
             var usuarios = _contexto.Usuarios.ToList();
 
@@ -23,11 +23,11 @@ namespace BL.Technology
             {
                 if (usuario == usuarioDB.Nombre && password == usuarioDB.Password)
                 {
-                    return true;
+                    return usuarioDB;
                 }
             }
 
-            return false;
+            return null;
         }
     }
 

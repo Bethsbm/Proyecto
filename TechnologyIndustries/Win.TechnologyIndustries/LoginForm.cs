@@ -49,6 +49,12 @@ namespace Win.TechnologyIndustries
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+
+        private void Login()
+        {
+
             string usuario = textBoxUsuario.Text;
             string password = textBoxPassword.Text;
 
@@ -58,8 +64,10 @@ namespace Win.TechnologyIndustries
 
             var resultado = _seguridad.Autorizar(usuario, password);
 
-            if (resultado == true)
+            if (resultado != null)
             {
+                Utilidades.nombreUsuario = resultado.Nombre;
+
                 this.Close();
             }
             else
@@ -67,7 +75,7 @@ namespace Win.TechnologyIndustries
                 MessageBox.Show("Usuario o contraseña incorrecta");
             }
         }
-
+        
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MessageBox.Show("¡No hay problema! Solo intenta recordarla.");
@@ -76,6 +84,24 @@ namespace Win.TechnologyIndustries
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBoxUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBoxUsuario.Text != "")
+            {
+
+                textBoxPassword.Focus();
+            }
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter && textBoxUsuario.Text != "" && textBoxPassword.Text != "")
+            {
+
+                Login();
+            }
         }
     }
 }

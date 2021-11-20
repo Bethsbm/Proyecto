@@ -27,6 +27,14 @@ namespace BL.Technology
             return ListadeProductos;
         }
 
+        public BindingList<Producto> ObtenerProducto(string buscar)
+        {
+
+            var resultado = _contexto.Productos.Where(r => r.Descripción.ToLower().Contains(buscar.ToLower()));
+
+            return new BindingList<Producto>(resultado.ToList());
+        }
+
         public Resultado GuardarProducto(Producto producto)
         {
             var resultado = Validar(producto);
