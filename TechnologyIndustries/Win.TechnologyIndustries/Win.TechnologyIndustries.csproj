@@ -96,19 +96,25 @@
     <Compile Include="IngresoInventarioForm.Designer.cs">
       <DependentUpon>IngresoInventarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuForm.cs">
+    <Compile Include="MenuPrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <Compile Include="MenuPrincipalForm.Designer.cs">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteClientesForm.cs">
+    <Compile Include="CarteraClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteClientesForm.Designer.cs">
-      <DependentUpon>ReporteClientesForm.cs</DependentUpon>
+    <Compile Include="CarteraClientesForm.Designer.cs">
+      <DependentUpon>CarteraClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientes.cs">
+      <DependentUpon>ReporteClientes.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="ReporteProductos.cs">
       <AutoGen>True</AutoGen>
@@ -134,11 +140,11 @@
     <Compile Include="ReporteVentasForm.Designer.cs">
       <DependentUpon>ReporteVentasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalidaInventarioForm.cs">
+    <Compile Include="ReporteClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalidaInventarioForm.Designer.cs">
-      <DependentUpon>SalidaInventarioForm.cs</DependentUpon>
+    <Compile Include="ReporteClientesForm.Designer.cs">
+      <DependentUpon>ReporteClientesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
     <Compile Include="VentasForm.cs">
@@ -156,8 +162,8 @@
     <EmbeddedResource Include="IngresoInventarioForm.resx">
       <DependentUpon>IngresoInventarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipalForm.resx">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,8 +175,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReporteClientesForm.resx">
-      <DependentUpon>ReporteClientesForm.cs</DependentUpon>
+    <EmbeddedResource Include="CarteraClientesForm.resx">
+      <DependentUpon>CarteraClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteClientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -186,8 +196,8 @@
     <EmbeddedResource Include="ReporteVentasForm.resx">
       <DependentUpon>ReporteVentasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalidaInventarioForm.resx">
-      <DependentUpon>SalidaInventarioForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteClientesForm.resx">
+      <DependentUpon>ReporteClientesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentasForm.resx">
       <DependentUpon>VentasForm.cs</DependentUpon>

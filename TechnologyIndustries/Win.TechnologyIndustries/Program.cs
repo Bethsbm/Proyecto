@@ -18,7 +18,7 @@ namespace Win.TechnologyIndustries
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            Application.Run(new MenuPrincipalForm());
         }
 
         public static byte[] imageToByteArray(Image imageIn)

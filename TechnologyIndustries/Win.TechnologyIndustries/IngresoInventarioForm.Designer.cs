@@ -517,8 +517,11 @@
             this.Controls.Add(this.stockTextBox);
             this.Controls.Add(this.listadeProductosBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(546, 366);
+            this.MinimumSize = new System.Drawing.Size(546, 366);
             this.Name = "IngresoInventarioForm";
             this.RightToLeftLayout = true;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingreso de Inventario";
             this.Load += new System.EventHandler(this.IngresoInventarioForm_Load);
